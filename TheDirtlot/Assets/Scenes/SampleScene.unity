@@ -143,6 +143,8 @@ MonoBehaviour:
   ContentPanel: {fileID: 32835440}
   GridSize: 10
   TilePrefab: {fileID: 1879257820544865690, guid: 67fb78e5bdefa004c9f88b91fe14d1d9, type: 3}
+  LinePanel: {fileID: 8634153492738163444, guid: 59b9bbb698662574f9b791efba5bb868, type: 3}
+  FinishedAddingVerticalLines: 0
 --- !u!1 &65941275
 GameObject:
   m_ObjectHideFlags: 0
