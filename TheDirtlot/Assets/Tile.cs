@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class TabPanel : MonoBehaviour
+[RequireComponent(typeof(Image))]
+public class Tile : MonoBehaviour
 {
-    public GameObject Panel;
+    private Image backgroundImage;
+    public int TileSize;
 
     // Start is called before the first frame update
     void Start()
     {
-        Panel.SetActive(false);
+        backgroundImage = GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -17,4 +20,5 @@ public class TabPanel : MonoBehaviour
     {
         
     }
+
 }
