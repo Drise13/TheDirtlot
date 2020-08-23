@@ -1,5 +1,7 @@
 ﻿namespace Assets.Managers
 {
+    using System.Numerics;
+
     using JetBrains.Annotations;
 
     using UnityEngine;
@@ -19,6 +21,8 @@
 
         public GameSpeeds GameSpeed = GameSpeeds.Normal;
 
+        public BigInteger Ticks = 0;
+
         [UsedImplicitly]
         public void Awake()
         {
@@ -34,7 +38,10 @@
         [UsedImplicitly]
         public void Update()
         {
-
+            if (UpdateStateThisFrame)
+            {
+                Ticks += 1;
+            }
         }
 
         private bool ShouldProgressGameState()
