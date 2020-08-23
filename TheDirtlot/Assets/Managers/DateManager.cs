@@ -1,8 +1,6 @@
-namespace Assets
+namespace Assets.Managers
 {
     using System;
-
-    using Managers;
 
     using UnityEngine;
     using UnityEngine.UI;

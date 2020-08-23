@@ -8,7 +8,7 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     public Image BackgroundImage;
     public TabController TabController;
 
-    public TabPanel Panel;
+    public TabPanel TabPanel;
 
     public bool IsPrimary;
 
@@ -28,7 +28,7 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     }
 
     // Start is called before the first frame update
-    private void Start()
+    private void Awake()
     {
         BackgroundImage = GetComponent<Image>();
         TabController.Subscribe(this);

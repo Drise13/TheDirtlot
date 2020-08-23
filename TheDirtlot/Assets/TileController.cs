@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
+using Assets.Managers;
 using Assets.Utils;
 
 using UnityEngine;
@@ -31,6 +32,8 @@ public class TileController : MonoBehaviour
             {
                 var prefab = Instantiate(TilePrefab, ContentPanel.transform);
                 var tile = prefab.GetComponent<Tile>();
+                tile.CurrentTool = ToolManager.Instance.Tools.First(t => t.ToolType == ToolType.Dirt);
+
                 TileGrid[x].Add(tile);
 
                 prefab.transform.localPosition = new Vector3(x * tile.TileSize, -y * tile.TileSize, 0);
@@ -40,9 +43,4 @@ public class TileController : MonoBehaviour
 
     // Update is called once per frame
     private void Update() { }
-
-    public void OnDrawGizmos()
-    {
-        //PrepareGrid();
-    }
 }

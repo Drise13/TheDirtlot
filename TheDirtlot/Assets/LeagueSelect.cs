@@ -11,26 +11,30 @@ using UnityEngine.UI;
 
 public class LeagueSelect : Singleton<LeagueSelect>
 {
+    private int closeAtFrame;
     private bool isShowing;
     public GameObject LeaguePanelCanvas;
     public GameObject LeaguePanelPrefab;
     public GraphicRaycaster Raycaster;
     public bool showPopUp;
 
-    public bool WaitingToClose = false;
-    private int closeAtFrame = 0;
+    public bool WaitingToClose;
 
     public League SelectedLeague { get; set; }
 
     // Start is called before the first frame update
     public void Start()
     {
-        LeaguePanelCanvas.SetActive(false);
+        LeaguePanelCanvas?.SetActive(false);
     }
 
     public void Awake()
     {
-        Raycaster = LeaguePanelCanvas.GetComponent<GraphicRaycaster>();
+        enabled = false;
+        if (enabled)
+        {
+            Raycaster = LeaguePanelCanvas?.GetComponent<GraphicRaycaster>();
+        }
     }
 
     // Update is called once per frame

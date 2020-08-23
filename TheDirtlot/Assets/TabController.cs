@@ -13,7 +13,6 @@ public class TabController : MonoBehaviour
 
     public List<TabButton> TabButtons = new List<TabButton>();
 
-
     public void Subscribe(TabButton tabButton)
     {
         TabButtons.Add(tabButton);
@@ -32,6 +31,7 @@ public class TabController : MonoBehaviour
     public void Start()
     {
         OnTabSelected(TabButtons.FirstOrDefault(b => b.IsPrimary));
+        ResetTabs();
     }
 
     public void OnTabExit(TabButton tabButton)
@@ -43,8 +43,8 @@ public class TabController : MonoBehaviour
     {
         tabButton.BackgroundImage.sprite = ActiveSprite;
 
-        SelectedButton?.Panel.Panel.SetActive(false);
-        tabButton.Panel.Panel.SetActive(true);
+        SelectedButton?.TabPanel.Panel.SetActive(false);
+        tabButton.TabPanel.Panel.SetActive(true);
 
         SelectedButton = tabButton;
         ResetTabs();
